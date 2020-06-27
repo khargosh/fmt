@@ -1,0 +1,20 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+licenses(["notice"])  # MIT
+
+exports_files(["LICENSE.rst"])
+
+cc_library(
+    name = "fmt",
+    srcs = glob([
+        "src/**/*.cc",
+    ]),
+    hdrs = glob([
+        "include/**/*.h",
+    ]),
+    includes = [
+        "include",
+    ],
+    visibility = ["//visibility:public"],
+)
+
